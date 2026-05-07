@@ -14,7 +14,7 @@ export default function LeadMagnetSection({ url, setUrl, setPage }: LeadMagnetSe
     <section style={{ padding: "108px 0", background: `linear-gradient(135deg,${C.blue} 0%,#1255cc 100%)`, position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", top: "-20%", right: "-5%", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 28px", position: "relative", zIndex: 1 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 480px", gap: 72, alignItems: "center" }}>
+        <div className="cols-lead" style={{ display: "grid", gap: 72, alignItems: "center" }}>
 
           <FadeIn direction="left">
             <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".15em", textTransform: "uppercase", color: "rgba(255,255,255,.55)", display: "block", marginBottom: 10 }}>Free Offer</span>

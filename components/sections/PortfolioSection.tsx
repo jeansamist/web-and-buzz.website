@@ -97,7 +97,7 @@ export default function PortfolioSection({ activeTab, setActiveTab, setPage, han
         </FadeIn>
 
         {/* Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+        <div className="cols-3" style={{ display: "grid", gap: 20 }}>
           {PROJECTS.map((p, i) => (
             <FadeIn key={i} delay={i * 0.07}>
               <div

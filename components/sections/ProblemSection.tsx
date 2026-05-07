@@ -11,7 +11,7 @@ export default function ProblemSection({ setPage }: ProblemSectionProps) {
   return (
     <section style={{ padding: "108px 0", background: C.white }}>
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 28px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+        <div className="cols-2" style={{ display: "grid", gap: 80, alignItems: "center" }}>
 
           <FadeIn direction="left">
             <span className="eyebrow">The Problem</span>

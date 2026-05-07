@@ -27,7 +27,7 @@ export default function WhyUsSection({ setPage }: WhyUsSectionProps) {
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 18 }}>
+        <div className="cols-2" style={{ display: "grid", gap: 18 }}>
           {REASONS.map((d, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <div className="hover-lift" style={{ background: C.white, border: `1.5px solid ${C.cloud}`, borderRadius: 16, padding: 30, display: "flex", gap: 18, alignItems: "flex-start" }}>

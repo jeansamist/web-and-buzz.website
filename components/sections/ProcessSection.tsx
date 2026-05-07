@@ -27,8 +27,8 @@ export default function ProcessSection({ setPage }: ProcessSectionProps) {
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20, position: "relative" }}>
-          <div style={{ position: "absolute", top: 38, left: "12%", right: "12%", height: 1, background: C.cloud, zIndex: 0 }} />
+        <div className="cols-4" style={{ display: "grid", gap: 20, position: "relative" }}>
+          <div className="connector-line" style={{ position: "absolute", top: 38, left: "12%", right: "12%", height: 1, background: C.cloud, zIndex: 0 }} />
           {PHASES.map((p, i) => (
             <FadeIn key={i} delay={i * 0.12}>
               <div className="step-card" style={{ position: "relative", zIndex: 1, background: C.mist, borderRadius: 16, padding: 26, border: `1.5px solid ${C.cloud}` }}>

@@ -29,8 +29,8 @@ export default function HowItWorksSection({ setPage }: HowItWorksSectionProps) {
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 16, position: "relative" }}>
-          <div style={{ position: "absolute", top: 34, left: "10%", right: "10%", height: 1, background: "rgba(255,255,255,.07)", zIndex: 0 }} />
+        <div className="cols-5" style={{ display: "grid", gap: 16, position: "relative" }}>
+          <div className="connector-line" style={{ position: "absolute", top: 34, left: "10%", right: "10%", height: 1, background: "rgba(255,255,255,.07)", zIndex: 0 }} />
           {STEPS.map((s, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <div className="step-card" style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 8px" }}>

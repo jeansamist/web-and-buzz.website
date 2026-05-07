@@ -53,7 +53,7 @@ export default function ContactPage({ url, setUrl, form, setForm, formSent, setF
 
       {/* Main content */}
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "80px 28px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 60, alignItems: "flex-start" }}>
+        <div className="cols-contact" style={{ display: "grid", gap: 60, alignItems: "flex-start" }}>
 
           {/* Left — info */}
           <div>
@@ -116,7 +116,7 @@ export default function ContactPage({ url, setUrl, form, setForm, formSent, setF
                 <h3 style={{ fontSize: 22, fontWeight: 900, color: C.charcoal, marginBottom: 6, letterSpacing: "-0.02em" }}>Send Us a Message</h3>
                 <p style={{ fontSize: 14, color: "rgba(49,57,60,.5)", marginBottom: 28 }}>Tell us about your business and what you're looking to achieve.</p>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+                <div className="cols-2" style={{ display: "grid", gap: 16, marginBottom: 16 }}>
                   <div>
                     <label style={{ fontSize: 13, fontWeight: 700, color: C.charcoal, display: "block", marginBottom: 6 }}>Full Name <span style={{ color: C.orange }}>*</span></label>
                     <input className="form-input" type="text" placeholder="Jane Smith" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
@@ -127,7 +127,7 @@ export default function ContactPage({ url, setUrl, form, setForm, formSent, setF
                   </div>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+                <div className="cols-2" style={{ display: "grid", gap: 16, marginBottom: 16 }}>
                   <div>
                     <label style={{ fontSize: 13, fontWeight: 700, color: C.charcoal, display: "block", marginBottom: 6 }}>Phone Number</label>
                     <input className="form-input" type="tel" placeholder="+1 (555) 000-0000" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
@@ -185,7 +185,7 @@ export default function ContactPage({ url, setUrl, form, setForm, formSent, setF
             <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".15em", textTransform: "uppercase", color: C.blue, display: "block", marginBottom: 10 }}>Quick Answers</span>
             <h2 style={{ fontSize: 32, fontWeight: 900, color: C.charcoal, letterSpacing: "-0.02em" }}>Common Questions</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          <div className="cols-2" style={{ display: "grid", gap: 20 }}>
             {CONTACT_FAQS.map((faq, i) => (
               <div key={i} style={{ background: C.white, border: `1.5px solid ${C.cloud}`, borderRadius: 14, padding: 22 }}>
                 <h4 style={{ fontSize: 15, fontWeight: 800, color: C.charcoal, marginBottom: 8, letterSpacing: "-0.01em" }}>{faq.q}</h4>

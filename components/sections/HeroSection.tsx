@@ -15,7 +15,7 @@ export default function HeroSection({ setPage }: HeroSectionProps) {
       <div className="hero-blob2" />
 
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "80px 28px", width: "100%", position: "relative", zIndex: 1 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 420px", gap: 64, alignItems: "center" }}>
+        <div className="cols-hero" style={{ display: "grid", gap: 64, alignItems: "center" }}>
 
           {/* Left */}
           <div>

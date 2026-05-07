@@ -103,7 +103,7 @@ export default function BlogSection({ setPage, handleNav }: BlogSectionProps) {
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr 1fr", gap: 20 }}>
+        <div className="cols-blog" style={{ display: "grid", gap: 20 }}>
           {/* Featured */}
           <FadeIn delay={0.05}>
             <div

@@ -27,7 +27,7 @@ export default function ShiftSection({ setPage }: ShiftSectionProps) {
     <section style={{ padding: "108px 0", background: C.charcoal, position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", top: "-20%", right: "-5%", width: 600, height: 600, borderRadius: "50%", background: `radial-gradient(circle,rgba(33,118,255,.14) 0%,transparent 70%)`, pointerEvents: "none" }} />
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 28px", position: "relative", zIndex: 1 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+        <div className="cols-2" style={{ display: "grid", gap: 80, alignItems: "center" }}>
 
           <FadeIn direction="left">
             <span className="eyebrow-light">The Shift</span>

@@ -11,7 +11,7 @@ export default function Footer({ setPage, handleNav }: FooterProps) {
   return (
     <footer style={{ background: "#0a0f15", padding: "64px 0 24px" }}>
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 28px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2.2fr 1fr 1fr 1fr", gap: 48, marginBottom: 52 }}>
+        <div className="cols-footer" style={{ display: "grid", gap: 48, marginBottom: 52 }}>
 
           {/* Brand */}
           <div>

@@ -27,7 +27,7 @@ export default function ResultsSection({ setPage, handleNav }: ResultsSectionPro
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+        <div className="cols-3" style={{ display: "grid", gap: 20 }}>
           {CASES.map((c, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <div style={{ background: C.white, borderRadius: 16, padding: 30, border: `1.5px solid ${C.cloud}`, height: "100%" }}>

@@ -36,7 +36,7 @@ export default function TestimonialsSection() {
         <FadeIn delay={0.05}>
           <div style={{ background: `linear-gradient(135deg,${C.blue} 0%,#1255cc 100%)`, borderRadius: 20, padding: "44px 48px", marginBottom: 24, position: "relative", overflow: "hidden" }}>
             <div style={{ position: "absolute", top: "-20%", right: "-5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%)", pointerEvents: "none" }} />
-            <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 40, alignItems: "center", position: "relative", zIndex: 1 }}>
+            <div className="cols-feat-tst" style={{ display: "grid", gap: 40, alignItems: "center", position: "relative", zIndex: 1 }}>
               <div>
                 <Quote size={36} color="rgba(255,255,255,.25)" style={{ marginBottom: 16 }} />
                 <p style={{ fontSize: "clamp(18px,2.2vw,24px)", color: C.white, lineHeight: 1.65, fontWeight: 500, fontStyle: "italic", marginBottom: 28, letterSpacing: "-0.01em" }}>
@@ -65,7 +65,7 @@ export default function TestimonialsSection() {
         </FadeIn>
 
         {/* Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 18, marginBottom: 24 }}>
+        <div className="cols-3" style={{ display: "grid", gap: 18, marginBottom: 24 }}>
           {TESTIMONIALS.map((t, i) => (
             <FadeIn key={i} delay={i * 0.07}>
               <div

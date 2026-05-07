@@ -33,7 +33,7 @@ export default function ServicesSection({ setPage, handleNav }: ServicesSectionP
           </div>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 18 }}>
+        <div className="cols-3" style={{ display: "grid", gap: 18 }}>
           {SERVICES.map((s, i) => (
             <FadeIn key={i} delay={i * 0.07}>
               <div className="hover-lift" style={{ background: C.white, borderRadius: 16, padding: 28, border: `1.5px solid ${C.cloud}`, cursor: "default" }}>

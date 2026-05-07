@@ -1,4 +1,6 @@
-import { ArrowRight, Zap } from "lucide-react";
+'use client';
+import { useState } from "react";
+import { ArrowRight, Zap, Menu, X as CloseIcon } from "lucide-react";
 import { C } from "@/lib/colors";
 import { PageType } from "@/lib/types";
 
@@ -20,6 +22,10 @@ const NAV_LINKS: [string, string][] = [
 ];
 
 export default function Navbar({ scrolled, page, setPage, handleNav }: NavbarProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const close = () => setMenuOpen(false);
+
   return (
     <nav
       style={{
@@ -33,7 +39,7 @@ export default function Navbar({ scrolled, page, setPage, handleNav }: NavbarPro
     >
       <div style={{ maxWidth: 1180, margin: "0 auto", padding: "0 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         {/* Logo */}
-        <button onClick={() => setPage("home")} style={{ display: "flex", alignItems: "center", gap: 9, background: "none", border: "none", cursor: "pointer", padding: 0 }}>
+        <button onClick={() => { setPage("home"); close(); }} style={{ display: "flex", alignItems: "center", gap: 9, background: "none", border: "none", cursor: "pointer", padding: 0 }}>
           <div style={{ width: 34, height: 34, background: C.blue, borderRadius: 9, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 4px 14px rgba(33,118,255,.4)` }}>
             <Zap size={18} color={C.white} fill={C.white} />
           </div>
@@ -42,8 +48,8 @@ export default function Navbar({ scrolled, page, setPage, handleNav }: NavbarPro
           </span>
         </button>
 
-        {/* Links */}
-        <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
+        {/* Desktop links */}
+        <div className="nav-links">
           {NAV_LINKS.map(([label, href]) => {
             const isActive = page === "contact" && label === "Contact Us";
             return (
@@ -67,7 +73,49 @@ export default function Navbar({ scrolled, page, setPage, handleNav }: NavbarPro
             Get Free Audit <ArrowRight size={14} />
           </button>
         </div>
+
+        {/* Hamburger */}
+        <button
+          className="nav-hamburger"
+          onClick={() => setMenuOpen(!menuOpen)}
+          style={{ color: scrolled ? C.charcoal : C.white }}
+        >
+          {menuOpen ? <CloseIcon size={24} color={scrolled ? C.charcoal : C.white} /> : <Menu size={24} color={scrolled ? C.charcoal : C.white} />}
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div style={{
+          background: scrolled ? "rgba(255,255,255,.97)" : "rgba(15,25,35,.97)",
+          backdropFilter: "blur(16px)",
+          borderTop: `1px solid ${scrolled ? C.cloud : "rgba(255,255,255,.1)"}`,
+          padding: "12px 28px 24px",
+        }}>
+          {NAV_LINKS.map(([label, href]) => {
+            const isActive = page === "contact" && label === "Contact Us";
+            return (
+              <button
+                key={label}
+                onClick={() => { handleNav(href); close(); }}
+                style={{
+                  display: "block", width: "100%", background: "none", border: "none", cursor: "pointer",
+                  padding: "13px 0", textAlign: "left",
+                  color: isActive ? C.blue : scrolled ? C.charcoal : "rgba(255,255,255,.8)",
+                  fontWeight: isActive ? 700 : 600, fontSize: 15,
+                  borderBottom: `1px solid ${scrolled ? C.cloud : "rgba(255,255,255,.07)"}`,
+                  fontFamily: "'Outfit',sans-serif", letterSpacing: "-.01em",
+                }}
+              >
+                {label}
+              </button>
+            );
+          })}
+          <button className="btn-blue" style={{ marginTop: 18, width: "100%", justifyContent: "center", fontSize: 14 }} onClick={() => { handleNav("#contact"); close(); }}>
+            Get Free Audit <ArrowRight size={14} />
+          </button>
+        </div>
+      )}
     </nav>
   );
 }
