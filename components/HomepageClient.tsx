@@ -27,7 +27,6 @@ export default function HomepageClient() {
   const [scrolled, setScrolled]   = useState(false);
   const [openFaq, setOpenFaq]     = useState<number | null>(null);
   const [url, setUrl]             = useState("");
-  const [activeTab, setActiveTab] = useState("All");
   const [page, setPage]           = useState<PageType>("home");
   const [form, setForm]           = useState<FormState>({ name: "", email: "", phone: "", service: "", message: "" });
   const [formSent, setFormSent]   = useState(false);
@@ -72,7 +71,7 @@ export default function HomepageClient() {
           <ServicesSection setPage={setPage} handleNav={handleNav} />
           <HowItWorksSection setPage={setPage} />
           <ResultsSection setPage={setPage} handleNav={handleNav} />
-          <PortfolioSection activeTab={activeTab} setActiveTab={setActiveTab} setPage={setPage} handleNav={handleNav} />
+          <PortfolioSection setPage={setPage} />
           <TestimonialsSection />
           <BlogSection setPage={setPage} handleNav={handleNav} />
           <LeadMagnetSection url={url} setUrl={setUrl} setPage={setPage} />
